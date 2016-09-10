@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= hotels
+  p Welcsome to #{hotels}
+    for hotel in hotels 
+      h1 welcome to #{hotel.name}
