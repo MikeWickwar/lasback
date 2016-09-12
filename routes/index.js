@@ -18,7 +18,7 @@ router.get('/hotels', function(req, res, next) {
 });
 
 router.post('/hotels', function(req, res, next) {
-  Hotels().insert({ req.body }).then(function () {
+  Hotels().insert(req.body).then(function () {
     res.json('{success: ithink, data: req.body}}');
   });
 });
