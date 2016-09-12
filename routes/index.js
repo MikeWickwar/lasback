@@ -18,8 +18,8 @@ router.get('/hotels', function(req, res, next) {
 });
 
 router.post('/hotels', function(req, res, next) {
-  Hotels().insert(req.body).then(function () {
-    res.json('{success: ithink, data: req.body}}');
+  Hotels().insert(req.body).then(function (response) {
+    res.json("success:" + response);
   });
 });
 
