@@ -17,10 +17,10 @@ router.get('/hotels', function(req, res, next) {
   });
 });
 
-// router.post('/hotels', function(req, res, next) {
-//   Hotels().insert({ name: req.body.album_name }).then(function () {
-//     res.redirect('/albums');
-//   });
-// });
+router.post('/hotels', function(req, res, next) {
+  Hotels().insert({ req.body }).then(function () {
+    res.json('{success: ithink, data: req.body}}');
+  });
+});
 
 module.exports = router;
