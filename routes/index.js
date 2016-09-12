@@ -23,4 +23,12 @@ router.post('/hotels', function(req, res, next) {
   });
 });
 
+router.get('/hotels/:id', function(req, res, next) {
+  var id = req.params.id
+  Hotels().select().where('hotels.id', '=', id).then(function(response){
+    res.json(response);
+
+  })
+});
+
 module.exports = router;
