@@ -16,9 +16,9 @@ router.get('/hotel_names', function(req, res, next) {
      console.log("Status code: " + response.statusCode);
      if(response.statusCode === 200) {
        // Parse the document body
-       res.json({'hotels': {hotels: body}});
-
        var $ = cheerio.load(body);
+       res.json({'hotels': {hotels: $('li.offer-item').text()}});
+
        console.log("hotels?:  " + $('li.offer-item').text());
      }
   });
