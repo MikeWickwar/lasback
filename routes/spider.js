@@ -17,9 +17,13 @@ router.get('/hotel_names', function(req, res, next) {
      if(response.statusCode === 200) {
        // Parse the document body
        var $ = cheerio.load(body);
-       res.json({'hotels': {hotels: $('li.offer-item').text()}});
+       var text = $('#RxUMI_158d8fabfa33d0aece922ec > div').text()
+       console.log("hotels?:  " + text);
+       for (hotel in text){
+         console.log(hotel, "HOTEL");
+       }
+       res.json({'hotels': {hotels: text}});
 
-       console.log("hotels?:  " + $('li.offer-item').text());
      }
   });
 
